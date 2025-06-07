@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Darslar | Raqamli Savodxonlik Ilovasi</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .lesson-card {
+      border-radius: 16px;
+      transition: all 0.3s ease;
+    }
+    .lesson-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0, 176, 116, 0.2);
+    }
+    .card-title {
+      color: #00B074;
+    }
+    .modal-body iframe {
+      width: 100%;
+      height: 300px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><b>📱 Raqamli Ilova</b></a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link " href="index.html">Bosh sahifa</a></li>
+          <li class="nav-item active"><a class="nav-link" href="lessons.html">Darslar</a></li>
+          <li class="nav-item"><a class="nav-link" href="quiz.html">Test</a></li>
+          <li class="nav-item"><a class="nav-link" href="./about.html">Biz haqimizda</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Lessons -->
+  <main class="container mt-5 pt-5">
+    <h2 class="text-center text-success mb-4">📘 Raqamli Darslar</h2>
+    <div class="row g-4">
+      <!-- Repeat for each lesson below -->
+      <!-- Darslar 1-7 -->
+      <!-- Cardlarni for loopga o‘xshash ko‘rinishda yoziladi -->
+
+      <!-- 1 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card lesson-card border-success h-100">
+          <div class="card-body">
+            <h5 class="card-title">1. Kompyuter tushunchasi</h5>
+            <p class="card-text">Kompyuter qismlari, funktsiyalari va foydalari haqida bilib oling.</p>
+            <button class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#lesson1">Boshlash</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card lesson-card border-primary h-100">
+          <div class="card-body">
+            <h5 class="card-title">2. Internet nima?</h5>
+            <p class="card-text">Internet ishlash prinsipi, foydali xizmatlar va xavfsizlik asoslari.</p>
+            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#lesson2">Boshlash</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card lesson-card border-info h-100">
+          <div class="card-body">
+            <h5 class="card-title">3. Elektr pochta (Email)</h5>
+            <p class="card-text">Email yaratish, jo‘natish va xavfsiz foydalanish qoidalari.</p>
+            <button class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#lesson3">Boshlash</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card lesson-card border-warning h-100">
+          <div class="card-body">
+            <h5 class="card-title">4. MS Word asoslari</h5>
+            <p class="card-text">Matnli hujjat tayyorlash, formatlash va saqlash ko‘nikmalari.</p>
+            <button class="btn btn-outline-warning btn-sm" data-bs-toggle="modal" data-bs-target="#lesson4">Boshlash</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card lesson-card border-danger h-100">
+          <div class="card-body">
+            <h5 class="card-title">5. MS Excel asoslari</h5>
+            <p class="card-text">Jadvallar yaratish, formulalar va grafiklar ishlatish.</p>
+            <button class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#lesson5">Boshlash</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card lesson-card border-dark h-100">
+          <div class="card-body">
+            <h5 class="card-title">6. Raqamli xavfsizlik</h5>
+            <p class="card-text">Parollar, phishing va antivirus dasturlari haqida.</p>
+            <button class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#lesson6">Boshlash</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card lesson-card border-secondary h-100">
+          <div class="card-body">
+            <h5 class="card-title">7. Onlayn xizmatlardan foydalanish</h5>
+            <p class="card-text">Google xizmatlari: Drive, Meet, Translate, Forms va boshqalar.</p>
+            <button class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#lesson7">Boshlash</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-4 mt-5">
+    <div class="container">
+      <p class="mb-0">© 2025 Raqamli Ta'lim</p>
+    </div>
+  </footer>
+
+  <!-- Modals (Darslarga mos) -->
+  <!-- Har bir modalni alohida yaratamiz -->
+
+  <!-- Modal Template (misol) -->
+  <div class="modal fade" id="lesson1" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+          <h5 class="modal-title">Kompyuter tushunchasi</h5>
+          <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <iframe width="853" height="480" src="https://www.youtube.com/embed/c6gdO6mwg8w" title="Kompyuter qanday ishlaydi?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <p class="mt-3">Kompyuter nima, uning qismlari va vazifalari haqida video dars.</p>
+          <a href="https://youtu.be/fwkCQH1hmF0" class="btn btn-outline-success btn-sm">Batafsil o‘qish</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shu kabi boshqa modal oynalar (2–7) -->
+  <!-- lesson2 -->
+  <div class="modal fade" id="lesson2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title">Internet nima?</h5>
+          <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <iframe width="853" height="480" src="https://www.youtube.com/embed/XXVHKbpknHg" title="Internet qanday ishlaydi? Internet nima? | Texnoplov [RUS sub]" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <p class="mt-3">Internet ishlashi, xavfsiz foydalanish va xizmatlar haqida dars.</p>
+          <a href="https://youtu.be/hVZRcGyPbds"  class="btn btn-outline-primary btn-sm">Batafsil o‘qish</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- lesson3 -->
+  <div class="modal fade" id="lesson3" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-info text-white">
+          <h5 class="modal-title">Elektr pochta</h5>
+          <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <iframe width="853" height="480" src="https://www.youtube.com/embed/WzId8ys1YuQ" title="Gmail haqida gaplashamiz | Elektron pochta qanday ishlaydi? | ITshnik" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <p class="mt-3">Email yaratish va xavfsiz ishlatish ko‘nikmalari.</p>
+          <a href="https://youtu.be/WzId8ys1YuQ" class="btn btn-outline-info btn-sm">Batafsil o‘qish</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- lesson4 -->
+  <div class="modal fade" id="lesson4" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-warning text-dark">
+          <h5 class="modal-title">MS Word asoslari</h5>
+          <button class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <iframe width="853" height="480" src="https://www.youtube.com/embed/GOU2_-8o1rI?list=PLH6-nISdWJQJin_c1NXIehorC2z6d3QPz" title="Microsoft Word  1 dars  Dastur bilan tanishuv  Asosiy sozlamalar  Qo&#39;shimcha kengaytmalar o&#39;rnatish" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <p class="mt-3">MS Wordda matn yozish va tahrirlash asoslari.</p>
+          <a href="https://youtu.be/GOU2_-8o1rI?list=PLH6-nISdWJQJin_c1NXIehorC2z6d3QPz"  class="btn btn-outline-warning btn-sm">Batafsil o‘qish</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- lesson5 -->
+  <div class="modal fade" id="lesson5" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-danger text-white">
+          <h5 class="modal-title">MS Excel asoslari</h5>
+          <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <iframe width="853" height="480" src="https://www.youtube.com/embed/-S0MWPLRD3s?list=PLFRnhpV9odGAfkJ7FxnijvqqxvHlcGTNe" title="Microsoft excel jadvalining asosiy elementlari. 1-dars. Kirish" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <p class="mt-3">Excelda jadval yaratish va hisob-kitob funksiyalari.</p>
+          <a href="https://youtu.be/-S0MWPLRD3s?list=PLFRnhpV9odGAfkJ7FxnijvqqxvHlcGTNe"  class="btn btn-outline-danger btn-sm">Batafsil o‘qish</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- lesson6 -->
+  <div class="modal fade" id="lesson6" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white">
+          <h5 class="modal-title">Raqamli xavfsizlik</h5>
+          <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <iframe width="853" height="480" src="https://www.youtube.com/embed/unTavenYgDo?list=PLFRnhpV9odGDXUoUp5p50A6NHH4m4v7qS" title="Kiberxavfsizlik. 1- dars. Kiberxavfsizlik nima?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <p class="mt-3">Shaxsiy ma’lumotlar himoyasi va internetdagi xavfsizlik.</p>
+          <a href="https://youtu.be/tAzT4h0Pwt0?list=PLFRnhpV9odGDXUoUp5p50A6NHH4m4v7qS"  class="btn btn-outline-dark btn-sm">Batafsil o‘qish</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- lesson7 -->
+  <div class="modal fade" id="lesson7" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-secondary text-white">
+          <h5 class="modal-title">Onlayn xizmatlar</h5>
+          <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <iframe width="852" height="480" src="https://www.youtube.com/embed/0nT0bhJLbU0" title="Onlayn darslar uchun Google Meet platformasidan foydalanish-Платформа Google Meet для онлайн-уроков" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+					<br>
+					<iframe width="853" height="480" src="https://www.youtube.com/embed/xWUbl6qt3Fg" title="Google Диск bilan ishlash || Google Drive bilan ishlash" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <p class="mt-3">Google Drive, Google Meet va boshqa xizmatlardan foydalanish darslari.</p>
+          <a href="https://support.google.com/" class="btn btn-outline-secondary btn-sm">Batafsil o‘qish</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

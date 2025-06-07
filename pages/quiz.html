@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Raqamli Savodxonlik Testi</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #f8f9fa;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    main {
+      flex-grow: 1;
+      max-width: 720px;
+      margin: 30px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 176, 116, 0.25);
+    }
+    footer {
+      background-color: #00b074;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top ">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><b>📱 Raqamli Ilova</b></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Bosh sahifa</a></li>
+          <li class="nav-item"><a class="nav-link" href="lessons.html">Darslar</a></li>
+          <li class="nav-item"><a class="nav-link" href="quiz.html">Test</a></li>
+          <li class="nav-item"><a class="nav-link" href="./about.html">Biz haqimizda</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+	 <br>
+	 <br>
+	 <br>
+
+<main>
+  <!-- Start section -->
+  <section id="start-section" class="text-center">
+    <h2>Ismingizni kiriting va testni boshlang</h2>
+    <input
+      type="text"
+      id="username"
+      class="form-control w-50 mx-auto my-3"
+      placeholder="Ismingizni yozing"
+      aria-label="Ism"
+    />
+    <button class="btn btn-success" id="start-btn" disabled>Testni boshlash</button>
+  </section>
+
+  <!-- Quiz section -->
+  <section id="quiz-section" class="d-none">
+    <h4 id="question-number"></h4>
+    <h3 id="question-text"></h3>
+    <div id="options" class="list-group my-3"></div>
+    <button class="btn btn-success" id="next-btn" disabled>Keyingi</button>
+  </section>
+
+  <!-- Result section -->
+  <section id="result-section" class="d-none text-center">
+    <h2>Natijangiz</h2>
+    <p id="result-text" class="fs-5 my-3"></p>
+    <button class="btn btn-success" id="restart-btn">Yana boshlash</button>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <small>© 2025 Raqamli Ta'lim</small>
+  </div>
+</footer>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  const questions = [
+    { question: "Kompyuter tarmog‘i nima?", options: ["Ma’lumot saqlash qurilmasi", "Dasturiy ta’minot", "Kompyuterlar o‘rtasidagi aloqa tizimi", "O‘yin vositasi"], answer: 2 },
+    { question: "LAN tarmog‘i nimani anglatadi?", options: ["Global tarmoq", "Mahalliy tarmoq", "Simli aloqa", "Internet"], answer: 1 },
+    { question: "IP manzil nima?", options: ["Internet provayderi", "Kompyuter identifikatori", "Fayl nomi", "Brauzer"], answer: 1 },
+    { question: "Router nima qiladi?", options: ["Qog‘oz bosadi", "Dastur o‘rnatadi", "Ma’lumotni yo‘naltiradi", "Kompyuterni o‘chiradi"], answer: 2 },
+    { question: "HTTP protokoli nima uchun kerak?", options: ["Printer", "Veb sahifalar uchun", "Viruslar uchun", "Tarmoqlarni bloklash uchun"], answer: 1 },
+    { question: "DNS nima?", options: ["Sayt nomlarini IP ga o‘giradi", "Qurilmalarni yoqadi", "Fayllarni zaxiralaydi", "Ma'lumotlar bazasini tozalaydi"], answer: 0 },
+    { question: "Wi-Fi qanday aloqa?", options: ["Simli", "Tovushli", "Simsiz", "Optik"], answer: 2 },
+    { question: "Phishing nima?", options: ["Parolni unutish", "Firibgarlik orqali ma’lumot o‘g‘irlash", "Kompyuter tarmog‘i", "Mobil ilova"], answer: 1 },
+    { question: "Cloud computing nima?", options: ["Bulutli hisoblash", "Telefon turi", "Fayl saqlash qurilmasi", "Internet qidiruv"], answer: 0 },
+    { question: "HTML nima?", options: ["Dasturlash tili", "Veb sahifa tuzish tili", "Ma’lumotlar bazasi", "Internet provayder"], answer: 1 },
+    { question: "JavaScript nimaga kerak?", options: ["Rasm chizish", "Veb sahifaga interaktivlik qo‘shish", "Matn tahrirlash", "Video ko‘rish"], answer: 1 },
+    { question: "CSS nima?", options: ["Dasturlash tili", "Veb sahifa dizayni uchun", "Internet qidiruv", "Kompyuter apparati"], answer: 1 },
+    { question: "Responsive web design nima?", options: ["Foydalanuvchi interfeysi", "Moslashuvchan veb dizayn", "Dasturlash tili", "Mobil telefon"], answer: 1 },
+    { question: "Bootstrap nima?", options: ["Dasturlash tili", "CSS ramkasi", "Internet provayder", "Kompyuter modeli"], answer: 1 },
+    { question: "JavaScript-da 'var' o‘rniga nima ishlatish tavsiya etiladi?", options: ["let yoki const", "int", "function", "class"], answer: 0 }
+  ];
+
+  // Elementlar
+  const startSection = document.getElementById('start-section');
+  const quizSection = document.getElementById('quiz-section');
+  const resultSection = document.getElementById('result-section');
+
+  const usernameInput = document.getElementById('username');
+  const startBtn = document.getElementById('start-btn');
+
+  const questionNumber = document.getElementById('question-number');
+  const questionText = document.getElementById('question-text');
+  const optionsDiv = document.getElementById('options');
+  const nextBtn = document.getElementById('next-btn');
+
+  const resultText = document.getElementById('result-text');
+  const restartBtn = document.getElementById('restart-btn');
+
+  let currentQuestionIndex = 0;
+  let score = 0;
+  let userName = '';
+
+  // Ism kiritilsa tugma faollashsin
+  usernameInput.addEventListener('input', () => {
+    startBtn.disabled = usernameInput.value.trim() === '';
+  });
+
+  startBtn.addEventListener('click', () => {
+    userName = usernameInput.value.trim();
+    if (!userName) return;
+    startSection.classList.add('d-none');
+    quizSection.classList.remove('d-none');
+    currentQuestionIndex = 0;
+    score = 0;
+    showQuestion();
+  });
+
+  function showQuestion() {
+    nextBtn.disabled = true;
+    const q = questions[currentQuestionIndex];
+    questionNumber.textContent = `Savol ${currentQuestionIndex + 1} / ${questions.length}`;
+    questionText.textContent = q.question;
+    optionsDiv.innerHTML = '';
+
+    q.options.forEach((opt, i) => {
+      const option = document.createElement('button');
+      option.className = 'list-group-item list-group-item-action';
+      option.textContent = opt;
+      option.type = 'button';
+      option.onclick = () => selectOption(i);
+      optionsDiv.appendChild(option);
+    });
+  }
+
+  function selectOption(selectedIndex) {
+    // Javobni tekshirish va rang berish
+    const correctIndex = questions[currentQuestionIndex].answer;
+    const buttons = optionsDiv.querySelectorAll('button');
+
+    buttons.forEach((btn, idx) => {
+      btn.disabled = true;
+      if (idx === correctIndex) {
+        btn.classList.add('list-group-item-success');
+      }
+      if (idx === selectedIndex && idx !== correctIndex) {
+        btn.classList.add('list-group-item-danger');
+      }
+    });
+
+    if (selectedIndex === correctIndex) {
+      score++;
+    }
+
+    nextBtn.disabled = false;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+      showQuestion();
+    } else {
+      showResult();
+    }
+  });
+
+  function showResult() {
+    quizSection.classList.add('d-none');
+    resultSection.classList.remove('d-none');
+
+    let rating = '';
+    let percent = (score / questions.length) * 100;
+
+    if (percent >= 90) rating = 'A\'lo daraja! Juda zo\'r!';
+    else if (percent >= 70) rating = 'Yaxshi natija! Davom eting!';
+    else if (percent >= 50) rating = 'Qoniqarli natija. Yana harakat qiling.';
+    else rating = 'Kamchiliklar bor. Ko\'proq o\'rganing.';
+
+    resultText.innerHTML = `
+      Assalomu alaykum, <strong>${userName}</strong>!<br>
+      Siz <strong>${score}</strong> ta to‘g‘ri javob berdingiz.<br>
+      Natija: <strong>${percent.toFixed(1)}%</strong><br>
+      Baholash: <em>${rating}</em>
+    `;
+  }
+
+  restartBtn.addEventListener('click', () => {
+    // Boshiga qaytish
+    userName = '';
+    usernameInput.value = '';
+    startBtn.disabled = true;
+
+    resultSection.classList.add('d-none');
+    startSection.classList.remove('d-none');
+  });
+</script>
+
+</body>
+</html>
